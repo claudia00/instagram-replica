@@ -1,0 +1,6 @@
+framework module Pods_Instagram_replica {
+  umbrella header "Pods-Instagram_replica-umbrella.h"
+
+  export *
+  module * { export * }
+}
