@@ -18,18 +18,12 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func onSignIn(_ sender: Any) {
         func loginUser() {
-            
+
             let username = usernameField.text ?? ""
             let password = passwordField.text ?? ""
-            
+
             PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
                 if let error = error {
                     print("User log in failed: \(error.localizedDescription)")
@@ -40,24 +34,43 @@ class LoginViewController: UIViewController {
             }
         }
     }
+//            func Login(){
+//                var user = PFUser()
+//                user.username = usernameField.text!
+//                user.password = passwordField.text!
+//                PFUser.logInWithUsername(inBackground: usernameField.text!, password: passwordField.text!) { (User: PFUser?, Error: Error?) in
+//                    if Error == nil{
+//                        dispatch_get_main_queue().async(){
+//                            var Storyboard = UIStoryboard(name: "Main", bundle: nil)
+//
+//                        }
+                  //  }
+               // }
+           // }
     
-    @IBAction func onSignUp(_ sender: Any) {
-        
-        func registerUser(){
+    
+            @IBAction func onSignUp(_ sender: Any) {
+            
+//        registerUser()
+//
+//    }
+       // func registerUser(){
             //initialize a user object
         let newUser = PFUser()
         
         newUser.username = usernameField.text
         newUser.password = passwordField.text
         //newUser.signUpInBackground { (success: Bool, error: NSError) in
-            newUser.signUpInBackground { (success: Bool, error: Error?) in
+                newUser.signUpInBackground { (success: Bool, error: Error?) in
             if let error = error {
                 print(error.localizedDescription)
 
             }else{
                 print("Yay, created a user!")
-            }
-            }
-            }
-    }
+                self.dismiss(animated: true, completion: nil)
+                
+                }
+                }
 }
+        }
+//}
