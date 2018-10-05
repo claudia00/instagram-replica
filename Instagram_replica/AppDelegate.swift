@@ -26,6 +26,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://fathomless-fjord-94286.herokuapp.com/parse"
 
             }) )
+    // check if user is logged in.
+//    if PFUser.current() != nil {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        // view controller currently being set in Storyboard as default will be overridden
+//        window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "AuthenticatedViewController")
+//    }
+//    NotificationCenter.default.addObserver(forName: Notification.Name("didLogout"), object: nil, queue: OperationQueue.main) { (Notification) in
+//        print("Logout notification received")
+//        // TODO: Logout the User
+//        // TODO: Load and show the login view controller
+//    }
     return true
 
     }
